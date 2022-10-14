@@ -11,7 +11,7 @@
 Install
 
 ```bash
-npm install flashcli
+npm i -g https://github.com/ulvimemmeedov/FlashCLI
 ```
 
 ES5
