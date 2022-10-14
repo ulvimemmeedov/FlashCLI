@@ -1,8 +1,27 @@
 const path = require('path');
 const fs = require("fs");
+const { exec } = require('child_process');
 const srcPath = "./src";
 
 module.exports = class Kernel {
+
+    static newProject(projectName) {
+        if (!projectName) {
+            return console.error("Name not found")
+        }
+        exec(`git clone https://github.com/ulvimemmeedov/Flash.git ./${projectName}`, (error, stdout, stderr) => {
+            if (error) {
+                console.error(error);
+                return;
+            }
+            if (stdout) console.log(stdout);
+            if (stderr) {
+                console.error(stderr);
+                return;
+            }
+        });
+    }
+
     static makeEntity(entityName) {
         entityName = entityName.charAt(0).toUpperCase() + entityName.slice(1);
         const entityPath = path.join(`${srcPath}/entities`);

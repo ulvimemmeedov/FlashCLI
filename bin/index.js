@@ -49,6 +49,9 @@ switch (commandList[command]) {
     case 5:
         (async () => await build())();
         break;
+    case 6:
+        Kernel.newProject(name);
+        break;
     default:
         break;
 }
