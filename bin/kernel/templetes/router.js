@@ -1,10 +1,6 @@
-const path = require("path");
-
-let dirname = path.join(__dirname, "..//..//src/core/types");
-
 function routerGenerator(url) {
     return `
-import { routeType } from "${dirname}"
+import { routeType } from "../core/types"
 
 const routes: routeType[] = [
     {
