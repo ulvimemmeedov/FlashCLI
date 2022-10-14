@@ -19,6 +19,17 @@ module.exports = class Kernel {
                 console.error(stderr);
                 return;
             }
+            exec(`rm -R ./${projectName}/.git`, (error, stdout, stderr) => {
+                if (error) {
+                    console.error(error);
+                    return;
+                }
+                if (stdout) console.log(stdout);
+                if (stderr) {
+                    console.error(stderr);
+                    return;
+                }
+            });
         });
     }
 
